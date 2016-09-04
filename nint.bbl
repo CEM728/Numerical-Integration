@@ -1,0 +1,17 @@
+\begin{thebibliography}{1}
+
+\bibitem{arfken2001mathematical}
+G.~Arfken and H.~Weber, {\em Mathematical Methods for Physicists}.
+\newblock Academic Press, Harcourt/Academic Press, 2001.
+
+\bibitem{golubovic2012efficient}
+R.~Golubovic, A.~G. Polimeridis, and J.~R. Mosig, ``Efficient algorithms for
+  computing {S}ommerfeld integral tails,'' {\em IEEE Transactions on Antennas
+  and Propagation}, vol.~60, no.~5, pp.~2409--2417, 2012.
+
+\bibitem{michalski2016efficient}
+K.~A. Michalski and J.~R. Mosig, ``Efficient computation of {S}ommerfeld
+  integral tails--methods and algorithms,'' {\em Journal of Electromagnetic
+  Waves and Applications}, vol.~30, no.~3, pp.~281--317, 2016.
+
+\end{thebibliography}
