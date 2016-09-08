@@ -14,4 +14,19 @@ K.~A. Michalski and J.~R. Mosig, ``Efficient computation of {S}ommerfeld
   integral tails--methods and algorithms,'' {\em Journal of Electromagnetic
   Waves and Applications}, vol.~30, no.~3, pp.~281--317, 2016.
 
+\bibitem{takahasi1974double}
+H.~Takahasi and M.~Mori, ``Double exponential formulas for numerical
+  integration,'' {\em Publications of the Research Institute for Mathematical
+  Sciences}, vol.~9, no.~3, pp.~721--741, 1974.
+
+\bibitem{bailey2005comparison}
+D.~H. Bailey, K.~Jeyabalan, and X.~S. Li, ``A comparison of three
+  high-precision quadrature schemes,'' {\em Experimental Mathematics}, vol.~14,
+  no.~3, pp.~317--329, 2005.
+
+\bibitem{mori2005discovery}
+M.~Mori, ``Discovery of the double exponential transformation and its
+  developments,'' {\em Publications of the Research Institute for Mathematical
+  Sciences}, vol.~41, no.~4, pp.~897--935, 2005.
+
 \end{thebibliography}

@@ -62,7 +62,8 @@
     \label{eq:SI}
   \end{equation}
 
-  where $\ti{G}$ is a spectral domain Green's function of the structure, $\v{r}$ and $\v{r}'$ are the observation and source locations respectively, and $J_n$ is bessel's function of order $n$. In most cases, integral in (\ref{eq:SI}) cannot be solved analytically. Furthermore, due to singularities and oscillations in the integrand, the numerical evaluation  requires careful manipulation and techniques. Using the Cauchy's Integral Theoerem \cite[p. 377]{arfken2001mathematical} by selecting the path of integration along the positive real axis in the complex $k_{\p}$ plane as shown in Fig. \ref{fig:path}. \cite{golubovic2012efficient,michalski2016efficient}.
+  where $\ti{G}$ is a spectral domain Green's function of the structure, $\v{r}$ and $\v{r}'$ are the observation and source locations respectively, and $J_n$ is bessel's function of order $n$. In most cases, the integral in (\ref{eq:SI}) cannot be solved analytically. The integrand exhibits branch point singularities and very slow rate of convergence due to oscillaotory behaviour of the bessel function. Therefore, intelligent methods need to be implemented to expediete the integration of such integrals. By invoking the Cauchy's Integral Theoerem, \cite[p. 377]{arfken2001mathematical} we choose the path of integration along the positive real axis in the complex $k_{\p}$ plane as shown in Fig. \ref{fig:path} with slight indentation into the first quadrant around possible singularities.
+  \cite{golubovic2012efficient,michalski2016efficient}
 
   \begin{figure}[h!]
     \centering
@@ -79,7 +80,7 @@ The integral in (\ref{eq:SI}) is computed by splitting into three sections:
   \label{eq:SI_split}
 \end{equation}
 
-where $\gamma$ represents a slight detour of the integration path from the real axis. This is done to bypass the singularity lying on the real axis. The real part of $\gamma$ is the same as the singularity location, $k$ whereas the imaginary part should be as small as possible to avoid wild growth of the bessel function illustrated in Fig. \ref{fig:bessel}. Furthermore, $a$ represents a breakpoint, where we switch the numerical integration routine.
+where $\gamma$ represents the detour from the real axis. The distance between $\gamma$ and the real axis should be kept small in order to avoid wild growth of the bessel function with increasing imaginary part as illustrated in Fig. \ref{fig:bessel}. The path detour ends at the breakpoint $a$, where the method of numerical integration is switched. The two finite interval integrals in (\ref{eq:SI_split}) are computed using Double Exponential (DE) quadrature rule. \cite{takahasi1974double}. Unlike other quadratures, the DE rule works efficiently on integrands with singularity at one or both of the endpoints. \cite{bailey2005comparison, mori2005discovery} The remaining infinite interval along the real axis is computed through Partition Extrapolation (PE) method
 
 \begin{figure}[h!]
   \centering
@@ -90,9 +91,12 @@ where $\gamma$ represents a slight detour of the integration path from the real 
 
 \section{Overview of Numerical Integration}
 
+Most numerical integration routines are based on polynomial interpolation where the integral is approximated by:
 
-
-
+\begin{equation}
+  \int_a^b f(x) \diff(x) \approx w_0 f(x_0) + w_1 f(x_1) + ... + w_n f(x_n) = \sum_{i = 0}^n w_i f(x_i) 
+  \label{eq:Num_int}
+\end{equation}
   \clearpage % Force Bibliography to the end of document
   \bibliography{refs}
   \bibliographystyle{ieeetr}
